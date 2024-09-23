@@ -1,4 +1,4 @@
-def letters_indexs(startpos: str, endpos: str): # Возвращает индексы буквенных координат для вычисления их числовой дистанции относительно друг друга
+def letters_indexes(startpos: str, endpos: str): # Возвращает индексы буквенных координат для вычисления их числовой дистанции относительно друг друга
     letters = ["a", "b", "c", "d", "e", "f", "g", "h"] 
     letter_index_startpos = letters.index(startpos[0])
     letter_index_endpos = letters.index(endpos[0])
@@ -19,7 +19,7 @@ def move_figure_check(startpos: str, endpos: str, figure: str) -> bool: # Фун
             return False
 
     if figure == "Конь":
-        letter_index_startpos, letter_index_endpos = letters_indexs(startpos, endpos)
+        letter_index_startpos, letter_index_endpos = letters_indexes(startpos, endpos)
 
         if (
             abs(int(startpos[1]) - int(endpos[1])) == 1
@@ -33,7 +33,7 @@ def move_figure_check(startpos: str, endpos: str, figure: str) -> bool: # Фун
             return False
 
     if figure == "Король":
-        letter_index_startpos, letter_index_endpos = letters_indexs(startpos, endpos)
+        letter_index_startpos, letter_index_endpos = letters_indexes(startpos, endpos)
 
         if (
             abs(letter_index_endpos - letter_index_startpos) <= 1
@@ -44,7 +44,7 @@ def move_figure_check(startpos: str, endpos: str, figure: str) -> bool: # Фун
             return False
 
     if figure == "Слон":
-        letter_index_startpos, letter_index_endpos = letters_indexs(startpos, endpos)
+        letter_index_startpos, letter_index_endpos = letters_indexes(startpos, endpos)
 
         if abs(letter_index_endpos - letter_index_startpos) == abs(int(startpos[1]) - int(endpos[1])):
             return True
@@ -52,7 +52,7 @@ def move_figure_check(startpos: str, endpos: str, figure: str) -> bool: # Фун
             return False
 
     if figure == "Королева":
-        letter_index_startpos, letter_index_endpos = letters_indexs(startpos, endpos)
+        letter_index_startpos, letter_index_endpos = letters_indexes(startpos, endpos)
 
         if (abs(letter_index_endpos - letter_index_startpos) == abs(int(startpos[1]) - int(endpos[1]))) or (
             startpos[0] == endpos[0] or startpos[1] == endpos[1]
